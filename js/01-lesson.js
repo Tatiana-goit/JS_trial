@@ -55,3 +55,59 @@
 // 9.	Найти среднее арифметическое всех целых чисел от 1 до 1000.
 // 10.	Дано три числа. Если ни одно из чисел не равно 100, то вычислить их среднее арифметическое. 
 
+
+// function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+//   const totalPrice = orderedQuantity*pricePerDroid+deliveryFee;
+//   console.log(`Вы заказали дроидов на сумму ${totalPrice} кредитов. Доставка (${deliveryFee} кредитов) включена в сумму заказа.`);
+// }
+// makeOrderMessage(2, 100, 50);
+// makeOrderMessage(4, 300, 100);
+
+
+// function isAdult(age) {
+//   const passed = age>=18;
+//   return passed;
+// }
+// console.log(passed);
+
+
+// let isMatch;
+// function isValidPassword(password) {
+//   const SAVED_PASSWORD = 'jqueryismyjam';
+//   isMatch = password === SAVED_PASSWORD ;
+//   return isMatch;
+// }
+// isValidPassword('jqueryismyjam');
+// console.log(isMatch)
+
+
+// let message;
+// function checkStorage(available, ordered) {
+// if (available<ordered) {
+//     message = 'На складе недостаточно товаров!'
+// } else {
+//     message='Заказ оформлен, с вами свяжется менеджер'
+//     }
+// return message;
+// }
+// checkStorage(100, 50);
+// console.log(message);
+// checkStorage(100, 130);
+// console.log(message);
+// checkStorage(200, 20);
+// console.log(message);
+
+
+// let message;
+// function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+//   const totalPrice=pricePerDroid*orderedQuantity;
+//   if (totalPrice>customerCredits){
+//   message = 'Недостаточно средств на счету!'
+//   }else {
+//   message = `Вы купили ${orderedQuantity} дроидов, на счету осталось ${customerCredits-totalPrice} кредитов`}
+//   console.log(message);
+//   return message;
+// }
+// makeTransaction(3000, 5, 23000);
+// makeTransaction(1000, 3, 15000);
+// makeTransaction(500, 10, 5000)
