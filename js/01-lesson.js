@@ -52,18 +52,18 @@
 
 // 7.	Определить, кем является человек: дошкольник (0-6), ученик (6-17), студент (17-23) и т.д.
 // let number; 
-    // const num = prompt('Введите возраст');
-    // if (num > 0 && num <= 6) {
-    //     alert('дошкольник');
-    // } else if (num > 6 && num <= 17) {
-    //     alert('школьник');
-    // } else if (num > 17 && num <= 23) {
-    //     alert('студент');
-    // } else if (num > 23 && num <= 65) {
-    //     alert('работник');
-    // } else if (num > 65 && num <= 120) {
-    //     alert('пенсионер');
-    // } else { alert('а столько живут?'); }
+// const num = prompt('Введите возраст');
+// if (num > 0 && num <= 6) {
+//     alert('дошкольник');
+// } else if (num > 6 && num <= 17) {
+//     alert('школьник');
+// } else if (num > 17 && num <= 23) {
+//     alert('студент');
+// } else if (num > 23 && num <= 65) {
+//     alert('работник');
+// } else if (num > 65 && num <= 120) {
+//     alert('пенсионер');
+// } else { alert('а столько живут?'); }
 
 
 // 8.	Вывести на экран кубы натуральных чисел от 1 до 30 и подсчитать их сумму.
@@ -234,15 +234,105 @@
 //         continue;
 //     }
 //     sum += Number(str[i]);
-   
+
 //     }
 // console.log(sum);
 
 // for (let i = str.length - 1; i >= 0; i = i - 1){
 //     sumStr += (str[i]);
-    
+
 // }
 // console.log(sumStr);
 
 
+// console.log(5 > 4);
+// console.log(10 >= "7");
+// console.log("2" > "12");
+// console.log("2" < "12");
+// console.log("4" == 4);
+// console.log("6" === 6);
+// console.log("false" === false);
+// console.log(1 == true);
+// console.log(1 === true);
+// // console.log("0" == false);
+// // console.log("0" === false);
+// console.log("Ёнанас" < "ёжик");
+// console.log("Ёнанас" === "ёжик");
+// console.log(undefined == null);
+// console.log(undefined === null);
+// console.log(true && 3);
+// console.log(false && 3);
+// console.log(true && 4 && "hello");
+// console.log(true && 0 && "hello");
+// console.log(true || 3);
+// console.log(true || 3 || 4);
+// console.log(true || false || 7);
+// console.log(null || 2 || undefined);
+// console.log((1 && null && 2) > 0);
+// console.log(null || 2 && 3 || 4);
 
+// 2!!!
+//#13
+// function slugify(title) {
+//     let slug;
+//     let mas = [];
+//     slug = title.toLowerCase();
+//     mas = slug.split(' ');
+//     slug = mas.join('-');
+//     return slug;
+// }
+// console.log(slugify('Массивы для новичков'))
+
+// #16
+// function makeArray(firstArray, secondArray, maxLength) {
+// const newArray = firstArray.concat(secondArray);
+//   if (maxLength >= newArray.length) {
+//   return newArray}
+//   else {return newArray.slice(0,maxLength)}
+// }
+// console.log(makeArray(['Манго', 'Поли'], ['Аякс', 'Челси'], 3));
+// console.log(makeArray(['Земля', 'Юпитер'], ['Нептун', 'Уран'], 4));
+// console.log(makeArray(['Земля', 'Юпитер'], ['Нептун', 'Уран', 'Венера'], 0))
+
+// #21
+// function findLongestWord(string) {
+//     const mas = string.split(' ');
+//     let longestWord = mas[0];
+//     for (let i = 1; i < mas.length; i += 1) {
+//         if (mas[i].length > longestWord.length) {
+//             longestWord = mas[i];
+//          }
+//     }
+//     return longestWord;
+// }
+// console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+// console.log(findLongestWord('Google do a roll'));
+// console.log(findLongestWord('May the force be with you'));
+
+// #22
+// function createArrayOfNumbers(min, max) {
+//     const numbers = [];
+//  for (let i=min; i<=max; i +=1) {
+//     numbers.push(i);
+// }
+//   return numbers;
+// }
+// console.log(createArrayOfNumbers(1, 3));
+// console.log(createArrayOfNumbers(14, 17));
+// console.log(createArrayOfNumbers(29, 34));
+
+// #23
+// function filterArray(numbers, value) {
+//     let newMas = [];
+//     for (let i = 0; i < numbers.length; i += 1) { 
+//         if (numbers[i] > value) {
+//             newMas.push(numbers[i]);
+//         }
+//     }
+//     return newMas;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+// console.log(filterArray([1, 2, 3, 4, 5], 4));
+// console.log(filterArray([1, 2, 3, 4, 5], 5));
+// console.log(filterArray([12, 24, 8, 41, 76], 38));
+// console.log(filterArray([12, 24, 8, 41, 76], 20));
