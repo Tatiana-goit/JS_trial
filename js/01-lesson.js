@@ -336,3 +336,68 @@
 // console.log(filterArray([1, 2, 3, 4, 5], 5));
 // console.log(filterArray([12, 24, 8, 41, 76], 38));
 // console.log(filterArray([12, 24, 8, 41, 76], 20));
+
+// #26
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   for (const number of numbers) {
+//      if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   }
+
+//   return filteredNumbers;
+// }
+
+// #25
+// function getCommonElements(array1, array2) {
+//     let array3 = [];
+//   for (let i = 0; i < array1.length; i +=1)  {
+//       if (array2.includes(array1[i])) {
+//                 array3.push(array1[i])
+//             }
+//     }    
+// return array3;
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+
+// #28
+// const a = 3 % 3;
+// const b = 4 % 3;
+// const c = 11 % 4;
+// const d = 12 % 7;
+// const e = 8 % 3;
+
+// #29
+// function getEvenNumbers(start, end) {
+//     const massiv = [];
+//     for (let i = start; i <= end; i += 1) { 
+//         if (i % 2 === 0) { 
+//             massiv.push(i);
+//         }
+//     }
+//     return massiv;
+// }
+// console.log(getEvenNumbers(2, 5));
+// console.log(getEvenNumbers(3, 11));
+
+// #31
+// function findNumber(start, end, divisor) {
+//   let number;
+//   for (let i = start; i < end; i += 1) {
+//     if (i % divisor === 0) {
+//       return  i;
+//     }
+//   }
+// }
+
+// #32
+// function includes(array, value) {
+//     for (let i = 0; i < array.length; i += 1) {
+//         if (array[i] === value) { 
+//             return true;
+//         }
+//     }
+//     return false;
+// }
