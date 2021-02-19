@@ -189,3 +189,69 @@
 //     return false;
 // }
 // console.log(includes([1, 2, 3, 4, 5], 3))
+
+
+// ДОПОЛНИТЕЛЬНЫЕ ЗАДАЧИ
+
+// Напиши скрипт имитирующий вывод сообщений о списании средств на покупку товара.
+// const orderPieces = 5;
+
+// const credits = 23580;
+// const pricePerDroid = 3000;
+// const CANCELED_BY_USER = 'Отменено пользователем!';
+// const ACCESS_DENIED = 'Недостаточно средств на счету!';
+
+// let totalPrice = orderPieces * pricePerDroid; // Write code on this line
+// let balanceCredit = credits - totalPrice; // Write code on this line
+// let message = '';
+
+//  if (balanceCredit < 0)  {
+//  	message = ACCESS_DENIED
+//  } else if (orderPieces == null) {
+//    message = CANCELED_BY_USER
+//  	} else {message = `Вы купили ${orderPieces} дроидов, на счету осталось ${balanceCredit} кредитов`}
+
+//      console.log (message)
+
+
+
+// Доп задачи
+// Напиши скрипт имитирующий оформление заказа в избранную страну.
+// const ordering = function (countryName) {
+//     const CANCELED_BY_USER = 'Отменено пользователем!';
+//     const NO_DELIVERY = 'В выбранную страну доставка недоступна.';
+//     const CHINA = 'Китай';
+//     const AUSTRALIA = 'Австралия';
+//     const INDIA = 'Индия';
+//     const JAMAICA = 'Ямайка';
+//     let message;
+//     let price = 0;
+//     let country;
+//     if (countryName == null) {
+//         message = CANCELED_BY_USER;
+//     } else {
+//         country = countryName[0].toUpperCase() + countryName.slice(1, countryName.length).toLowerCase();
+//         switch (country) {
+//             case 'Китай':
+//                 price = 100;
+//                 break;
+//             case 'Австралия':
+//                 price = 170;
+//                 break;
+//             case 'Индия':
+//                 price = 80;
+//                 break;
+//             case 'Ямайка':
+//                 price = 120;
+//                 break;
+//         }
+        
+//         message = price !== 0 ? `Доставка в ${country} будет стоить ${price} кредитов` : `В выбранную страну доставка не доступна`;
+//     }
+//     return(message)
+//     }
+
+// console.log(ordering('китАЙ'));
+// console.log(ordering('Чили'));
+// console.log(ordering('ямайКА'));
+// console.log(ordering(null));
