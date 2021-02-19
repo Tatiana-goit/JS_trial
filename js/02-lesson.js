@@ -23,10 +23,9 @@
 
 // function makeArray(firstArray, secondArray, maxLength) {
 // const newArray = firstArray.concat(secondArray);
-//   if (maxLength >= newArray.length) {
-//   return newArray}
-//   else {return newArray.slice(0,maxLength)}
+// return maxLength >= newArray.length ? newArray : newArray.slice(0,maxLength)
 // }
+
 // console.log(makeArray(['Манго', 'Поли'], ['Аякс', 'Челси'], 3));
 // console.log(makeArray(['Земля', 'Юпитер'], ['Нептун', 'Уран'], 4));
 // console.log(makeArray(['Земля', 'Юпитер'], ['Нептун', 'Уран', 'Венера'], 0))
@@ -36,11 +35,12 @@
 // Напиши фукцнию findLongestWord(string) которая принимает произвольную строку состоящую только из слов разделённых пробелом (параметр string) и возвращает самое длинное слово в этой строке.
 
 // function findLongestWord(string) {
-//     const mas = string.split(' ');
-//     let longestWord = mas[0];
-//     for (let i = 1; i < mas.length; i += 1) {
-//         if (mas[i].length > longestWord.length) {
-//             longestWord = mas[i];
+//     const words = string.split(' ');
+//     let longestWord = words[0];
+
+//     for (const word of words) {
+//         if (word.length > longestWord.length) {
+//             longestWord = word;
 //          }
 //     }
 //     return longestWord;
@@ -48,6 +48,22 @@
 // console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
 // console.log(findLongestWord('Google do a roll'));
 // console.log(findLongestWord('May the force be with you'));
+
+// function findLongestWord(string) {
+//   // Пиши код ниже этой строки
+//   const words = string.split(' ');
+//   let longestWord=words[0];
+//   for (const word of words) {
+//     if (word.length > longestWord.length) {
+//      longestWord=word;
+//     }
+//   }
+//     return longestWord;
+//   // Пиши код выше этой строки
+// }
+
+// console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+
 
 
 // #22
@@ -70,9 +86,10 @@
 
 // function filterArray(numbers, value) {
 //     let newMas = [];
-//     for (let i = 0; i < numbers.length; i += 1) { 
-//         if (numbers[i] > value) {
-//             newMas.push(numbers[i]);
+
+//     for (const number of numbers) { 
+//         if (number > value) {
+//             newMas.push(number);
 //         }
 //     }
 //     return newMas;
@@ -148,13 +165,15 @@
 // не использовала переменную number.
 
 // function findNumber(start, end, divisor) {
-//   let number;
-//   for (let i = start; i < end; i += 1) {
+//     for (let i = start; i < end; i += 1) {
 //     if (i % divisor === 0) {
 //       return  i;
 //     }
 //   }
 // }
+
+// console.log(findNumber(23, 30,4));
+
 
 
 // #32 
@@ -162,10 +181,11 @@
 // При выполнении этой задачи в теле функции includes() нельзя использовать метод массив.includes(значение).
 
 // function includes(array, value) {
-//     for (let i = 0; i < array.length; i += 1) {
-//         if (array[i] === value) { 
+//     for (const element of array) {
+//         if (element === value) { 
 //             return true;
 //         }
 //     }
 //     return false;
 // }
+// console.log(includes([1, 2, 3, 4, 5], 3))
