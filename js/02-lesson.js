@@ -127,8 +127,8 @@
 //     }    
 // return array3;
 // }
-// console.log(getCommonElements([1, 2, 3], [2, 4]));
-// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+// console.table(getCommonElements([1, 2, 3], [2, 4]));
+// console.table(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
 
 
 // #28
@@ -185,8 +185,10 @@
 //         if (element === value) { 
 //             return true;
 //         }
+     
 //     }
-//     return false;
+//        return false;
+    
 // }
 // console.log(includes([1, 2, 3, 4, 5], 3))
 
@@ -255,3 +257,4 @@
 // console.log(ordering('Чили'));
 // console.log(ordering('ямайКА'));
 // console.log(ordering(null));
+
