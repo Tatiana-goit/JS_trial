@@ -26,6 +26,36 @@
 // console.log(schoolClass);
 
 
+// Доп задачи на деструктуризацию
+// свойство name присвоит в переменную name.
+// свойство years присвоит в переменную age.
+// свойство isAdmin присвоит в переменную isAdmin (false, если нет такого свойства)
+// const user = {
+//   name: "John",
+//   years: 30
+// };
+// const { name, years: age, isAdmin = false } = user;
+// console.log(name, age, isAdmin);
+
+
+
+
+// const temperatures = [18, 14, 12, 21, 17, 29];
+// const min = Math.min(temperatures);
+// console.log(min);
+
+
+// ... - spread, распыление. Позволяет распылить коллекцию элементов в другую коллекцию, сделав копию оригинальной не изменяя ее
+// ... - rest, сбор. Позволяет скопировать группу элементов коллекции в новую коллекцию, не изменяя оригинальную.
+
+
+// const numbers = [3,3,[1, 2, 3],5,6];
+// console.log(numbers);
+
+
+
+// ----------------------------------------------------------------------------------------
+
 // Задачи 3 модуль
 // 1-2. Присвой переменной apartment объект описывающий квартиру со следующими характеристиками
 //  Дополни объект квартиры свойством owner, значением которого будет объект с информацией о владельце. :
@@ -134,11 +164,11 @@
 // apartment.owner.name = 'Генри Сибола';
 // apartment.tags.push('trusted');
 
-apartment.area = 60;
-apartment.rooms = 3;
-apartment.location = {};
-apartment.location.country = 'Ямайка';
-apartment.location.city = 'Кингстон';
+// apartment.area = 60;
+// apartment.rooms = 3;
+// apartment.location = {};
+// apartment.location.country = 'Ямайка';
+// apartment.location.city = 'Кингстон';
 
 
 // console.log(apartment);
@@ -192,7 +222,7 @@ apartment.location.city = 'Кингстон';
 // console.log(values);
 
 
-!!!! ИЛИ
+// !!!! ИЛИ
 
 // const apartment = {
 //   descr: 'Просторная квартира в центре',
@@ -203,3 +233,9 @@ apartment.location.city = 'Кингстон';
 // console.log(Object.keys(apartment));
 
 // console.log(Object.values(apartment));
+
+
+
+
+
+
