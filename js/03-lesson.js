@@ -134,11 +134,11 @@
 // apartment.owner.name = 'Генри Сибола';
 // apartment.tags.push('trusted');
 
-// apartment.area = 60;
-// apartment.rooms = 3;
-// apartment.location = {};
-// apartment.location.country = 'Ямайка';
-// apartment.location.city = 'Кингстон';
+apartment.area = 60;
+apartment.rooms = 3;
+apartment.location = {};
+apartment.location.country = 'Ямайка';
+apartment.location.city = 'Кингстон';
 
 
 // console.log(apartment);
