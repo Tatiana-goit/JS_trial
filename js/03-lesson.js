@@ -689,3 +689,92 @@
 // }
 
 // console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+
+
+
+// 34. Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks() и addBook(bookName).
+// Метод removeBook(bookName) будет удалять книгу по имени. Возвращает строку 'Удаляем книгу <имя книги>', где <имя книги> это значение параметра bookName.
+// Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку 'Обновляем книгу <старое имя> на <новое имя>', где <старое имя> и <новое имя>это значения параметров oldName и newName соотвественно.
+    // const bookShelf = {
+    //     books: ['Последнее королевство', 'Страж снов'],
+    //     getBooks() {
+    //         return 'Возвращаем все книги';
+    //     },
+    //     addBook(bookName) {
+    //         return `Добавляем книгу ${bookName}`;
+    //     },
+    //     removeBook(bookName) {
+    //         return `Удаляем книгу ${bookName}`
+    //     },
+    //     updateBook(oldName, newName) {
+    //         return `Обновляем книгу ${oldName} на ${newName }`
+    //     }
+    // };
+
+    // console.log(bookShelf.getBooks());
+    // console.log(bookShelf.addBook('Мгла'));
+    // console.log(bookShelf.removeBook('Красный закат'));
+    // console.log(bookShelf.updateBook('Пески Дюны', 'Дюна'));
+
+
+// const bookShelf = {
+//   books: ['Последнее королевство'],
+//   getBooks() {
+//     return this.books;
+//   },
+//   addBook(bookName) {
+//     this.books.push(bookName);
+//   },
+//   removeBook(bookName) {
+//     const bookIndex = this.books.indexOf(bookName);
+//     this.books.splice(bookIndex, 1);
+//   },
+// };
+
+// console.log(bookShelf.getBooks()); // []
+// bookShelf.addBook('Мгла');
+// bookShelf.addBook('Страж снов');
+// console.log(bookShelf.getBooks()); // ['Последнее королевство', 'Мгла', 'Страж снов']
+// bookShelf.removeBook('Мгла');
+// console.log(bookShelf.getBooks()); // ['Последнее королевство', 'Страж снов']
+
+// 35. Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books. Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент.
+
+// const bookShelf = {
+//     books: ['Последнее королевство', 'Мгла', 'Страж снов'],
+    
+//     updateBook(oldName, newName) {
+//         const bookIndex = this.books.indexOf(oldName);
+//         this.books.splice(bookIndex, 1, newName);
+//         return this.books
+ 
+//   },
+// };
+
+// console.log(bookShelf.updateBook('Мгла', 'Хроники подземелий'));
+// console.log(bookShelf.updateBook('Последнее королевство', 'Дюна'));
+
+
+// 36-37. К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря - добавления, удаления, поиска и обновления зелий. Добавь объекту atTheOldToad свойство potions, значением которого сделай пустой массив.
+// 37. Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions.
+// 38. Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий в свойстве potions.
+
+const atTheOldToad = {
+    potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
+    
+    getPotions() {
+        return this.potions
+    },
+
+    addPotion(potionName) {
+        this.potions.push(potionName);
+    },
+
+
+};
+
+console.log(atTheOldToad.getPotions());
+atTheOldToad.addPotion('Невидимка');
+console.log(atTheOldToad.getPotions());
+
+
