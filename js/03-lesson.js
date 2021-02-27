@@ -448,3 +448,244 @@
 
 // console.log(calculateTotalPrice('Бластер'));
 // console.log(calculateTotalPrice('Радар'));
+
+
+
+// 21. Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю температуру за три дня (meanTemperature). Замени объявления переменных yesterday, today и tomorrow одной операцией деструктуризации свойств объекта highTemperatures.
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+
+// const { yesterday, today, tomorrow } = highTemperatures;
+
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+// console.log(meanTemperature);
+
+
+
+// 22. В прогнозе максимальных температур также может быть необязательное свойство icon - иконка погоды. Замени объявления переменных yesterday, today, tomorrow и icon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для icon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// const { yesterday, today, tomorrow, icon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg' } = highTemperatures;
+
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+
+// 23. Замени объявления переменных highYesterday, highToday, highTomorrow и highIcon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для highIcon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+
+// const { yesterday: highYesterday, today: highToday, tomorrow:highTomorrow, icon:highIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg' } = highTemperatures;
+
+// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+
+
+
+// 24. Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта..
+// const colors = [
+//   { hex: '#f44336', rgb: '244,67,54' },
+//   { hex: '#2196f3', rgb: '33,150,243' },
+//   { hex: '#4caf50', rgb: '76,175,80' },
+//   { hex: '#ffeb3b', rgb: '255,235,59' },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+
+
+// // for (const color of colors) {
+// //     const { hex, rgb } = color;
+// //   hexColors.push(hex);
+// //   rgbColors.push(rgb);
+// // }
+
+// for (const { hex, rgb } of colors) {
+
+//   hexColors.push(hex);
+//   rgbColors.push(rgb);
+// }
+
+// console.log(hexColors);
+// console.log(rgbColors);
+
+
+// 25.Мы получили прогноз погоды на два дня, с минимальными и максимальными температурами, а также необязательными иконками. Замени объявления всех переменных одной операцией деструктуризации свойств объекта forecast. Задай значение по умолчанию для иконок, переменных todayIcon и tomorrowIcon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+// const forecast = {
+//   today: {
+//     low: 28,
+//     high: 32,
+//     icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
+//   },
+//   tomorrow: {
+//     low: 27,
+//     high: 31,
+//   },
+// };
+
+// const {
+//     today: { low:lowToday, high: highToday, icon: todayIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg' },
+//     tomorrow: { low:lowTomorrow, high: highTomorrow, icon:tomorrowIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg' },
+// } = forecast;
+
+
+
+// 26. Функция calculateMeanTemperature(forecast) принимает один параметр forecast - объект температур на два дня следующего формата.
+// {
+//   today: { low: 10, high: 20 },
+//   tomorrow: { low: 20, high: 30 }
+// }
+// Замени объявления переменных todayLow, todayHigh, tomorrowLow и tomorrowHigh одной операцией деструктуризации свойств объекта forecast.
+
+// Пиши код ниже этой строки
+// function calculateMeanTemperature(forecast) {
+//     const { today: { low: todayLow, high: todayHigh },
+//         tomorrow: { low: tomorrowLow, high: tomorrowHigh } } = forecast;
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
+
+// console.log(calculateMeanTemperature({ today: {low: 28, high: 32}, tomorrow: {low: 25, high: 29} }));
+
+// const neww = {
+//     today: { low: 28, high: 32 },
+//     tomorrow: { low: 25, high: 29 }
+// }
+
+// const { today: { low: todayLow, high: todayHigh },
+//         tomorrow: { low: tomorrowLow, high: tomorrowHigh } } = neww;
+
+// function calculateMeanTemperature() {
+    
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
+
+// console.log(calculateMeanTemperature(neww));
+
+
+// 27. В переменной scores хранится массив результатов тестирования. Используя распыление и методы Math.max() и Math.min() дополни код так, чтобы в переменной bestScore был самый высокий балл, а в worstScore самый низкий.
+// const scores = [89, 64, 42, 17, 93, 51, 26];
+// const bestScore = Math.max(...scores);
+// const worstScore = Math.min(...scores);
+
+// console.log(bestScore);
+// console.log(worstScore);
+
+
+// 28. В переменных firstGroupScores, secondGroupScores и thirdGroupScores хранятся результаты тестирования отдельных групп. Используя распыление дополни код так, чтобы:
+// В переменной allScores хранился массив всех результатов от первой до третьей группы.
+// В переменной bestScore был самый высокий общий балл.
+// В переменной worstScore был самый низкий общий балл.
+
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+// const allScores = [...firstGroupScores, ...secondGroupScores,...thirdGroupScores ];
+// const bestScore = Math.max(...allScores);
+// const worstScore = Math.min(...allScores);
+
+// console.log(allScores);
+// console.log(bestScore);
+// console.log(worstScore);
+
+
+
+// 29. В конструкторе можно создавать новые тесты, для которых есть настройки по умолчанию которые хранятся в переменной defaultSettings. Во время создания теста, все или часть настроек можно переопределить, они хранятся в переменной overrideSettings.
+// Для того чтобы получить финальные настройки теста, необходимо взять настройки по умолчанию и поверх них применить переопределённые настройки. Дополни код так, чтобы в переменной finalSettings получился объект финальных настроек теста.
+
+// const defaultSettings = {
+//   theme: 'light',
+//   public: true,
+//   withPassword: false,
+//   minNumberOfQuestions: 10,
+//   timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//   public: false,
+//   withPassword: true,
+//   timePerQuestion: 30,
+// };
+
+// const finalSettings = { ...defaultSettings, ...overrideSettings };
+
+// console.log(finalSettings);
+
+
+
+// 30. Напиши функцию makeTask(data) которая принимает один параметр data - объект со следующими свойствами.
+// text - текст задачи.
+// category - категория задачи.
+// priority - приоритет задачи.
+// Функция должна составить и вернуть новый объект задачи, не изменяя напрямую параметр data. В новом объекте должно быть свойство completed, значение которого хранится в одноимённой локальной переменной.
+// В параметре data гарантированно будет только свойство text, а остальные два, category и priority, могут отсутствовать. Тогда, в новом объекте задачи, в свойствах category и priority должны быть значения по умолчанию, хранящиеся в одноимённых локальных переменных.
+
+// function makeTask(data) {
+//   const completed = false;
+//   const category = 'Общее';
+//   const priority = 'Обычный';
+
+//     return { category, priority, completed, ...data };
+// }
+
+// console.log(makeTask({ category: 'Домашнее', priority: 'Низкий', text: 'Вынести мусор' }));
+// // { category: 'Домашнее', priority: 'Низкий', text: 'Вынести мусор', completed: false }.
+// console.log(makeTask({ category: 'Финансы', text: 'Забрать проценты' }));
+// //  { category: 'Финансы', priority: 'Обычный', text: 'Забрать проценты', completed: false }.
+
+
+
+// 31. Используя операцию rest дополни код функции add() так, чтобы она принимала любое количество аргументов, считала и возвращала их сумму.
+// function add(...args) { 
+//     let sum = 0;
+//     for (const arg of args) { 
+//         sum += arg;
+//     }
+//     return sum;
+// }
+
+// console.log(add(32, 6, 13, 19, 8) );
+
+
+// 32. Функция addOverNum() считает сумму всех аргументов. Измени параметры и тело функции addOverNum() так, чтобы она считала сумму только тех аргументов, которые больше чем заданное число. Это число должно быть первым параметром функции.
+
+// function addOverNum(firstNumber,...args) {
+//   let total = 0;
+
+//     for (const arg of args) {
+//         if (arg > firstNumber) {
+//             total += arg;
+//         }
+//       }
+
+//   return total;
+// }
+
+// console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+
+
+// 33. Функция findMatches() принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
+// Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы, начиная со второго, которые есть в массиве первого аргумента.
+//     Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив[1, 2], потому что только они есть в массиве первого аргумента.
+
+// function findMatches(firstMassiv, ...args) {
+//     const matches = []; // Не изменяй эту строку
+//     console.log(firstMassiv);
+//     console.log(args);
+//     for (const arg of args) {
+//         if (firstMassiv.includes(arg)) { 
+//             matches.push(arg);
+//         }
+//     }
+
+//   return matches;
+// }
+
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
