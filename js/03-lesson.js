@@ -399,47 +399,46 @@ const products = [
   { name: 'Захват', price: 1200, quantity: 9 },
 ];
 
-function getAllPropValues(propName) {
-    const newMas = [];
-    for (const product of products) { 
+// function getAllPropValues(propName) {
+//     const newMas = [];
+//     for (const product of products) { 
         
-        if (Object.keys(product).includes(propName)) { 
-            newMas.push(product[propName])
-        }
-    }
-    return newMas;
-}
+//         if (Object.keys(product).includes(propName)) { 
+//             newMas.push(product[propName])
+//         }
+//     }
+//     return newMas;
+// }
 
-function getAllPropValues(propName) {
-    const newMas = [];
-    for (const product of products) { 
-        for (const key in product) {
-            if (key === propName) {
-                newMas.push(product[key])
-            }
-        }
-    }
-    return newMas;
-}
+// function getAllPropValues(propName) {
+//     const newMas = [];
+//     for (const product of products) { 
+//         for (const key in product) {
+//             if (key === propName) {
+//                 newMas.push(product[key])
+//             }
+//         }
+//     }
+//     return newMas;
+// }
 
 
+// function getAllPropValues (prop) {
+//   const total = [];
 
-function getAllPropValues (prop) {
-  const total = [];
+//   for (const product of products) {
+//     if (product[prop]) {
+//       total.push(product[prop]);
+//     }
+//   }
 
-  for (const product of products) {
-    if (product[prop]) {
-      total.push(product[prop]);
-    }
-  }
+//   return total;
+// };
 
-  return total;
-};
-
-console.log(getAllPropValues('name'));
-console.log(getAllPropValues('quantity'));
-console.log(getAllPropValues('price'));
-console.log(getAllPropValues('category'));
+// console.log(getAllPropValues('name'));
+// console.log(getAllPropValues('quantity'));
+// console.log(getAllPropValues('price'));
+// console.log(getAllPropValues('category'));
 
 
 // 20. Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара. Функция должна вернуть общую стоимость (цена * количество) товара с таким именем из массива products.
@@ -828,43 +827,55 @@ console.log(getAllPropValues('category'));
 // removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
 // updatePotionName(oldName, newName) - обновляет свойство name объекта-зелья с названием oldName на newName в массиве potions.
 
-const atTheOldToad = {
-  potions: [
-    { name: 'Зелье скорости', price: 460 },
-    { name: 'Дыхание дракона', price: 780 },
-    { name: 'Каменная кожа', price: 520 },
-  ],
-  // Пиши код ниже этой строки
-  getPotions() {
-    return this.potions;
-  },
-  addPotion(potionName) {
-    if (this.potions.includes(potionName)) {
-      return `Зелье ${potionName} уже есть в инвентаре!`;
-    }
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Зелье скорости', price: 460 },
+//     { name: 'Дыхание дракона', price: 780 },
+//     { name: 'Каменная кожа', price: 520 },
+//   ],
 
-    this.potions.push(potionName);
-  },
-  removePotion(potionName) {
-    const potionIndex = this.potions.indexOf(potionName);
+//   getPotions() {
+//     return this.potions;
+//   },
 
-    if (potionIndex === -1) {
-      return `Зелья ${potionName} нет в инвентаре!`;
-    }
+//   addPotion({ name, price }) {
+//     for (const potion of this.potions) { 
+//        if (potion.name === name) {
+//         return `Зелье ${name} уже есть в инвентаре!`;
+//       }
+//     }
+//     this.potions.push({ name, price });
+//   },
 
-    this.potions.splice(potionIndex, 1);
-  },
-  updatePotionName(oldName, newName) {
-    const potionIndex = this.potions.indexOf(oldName);
+//   removePotion(potionName) {
+//       for (let i = 0; i < this.potions.length; i += 1) {
+//       if (this.potions[i].name === potionName) {
+//         return this.potions.splice(i, 1);
+//       }
+//     }
+//   },
 
-    if (potionIndex === -1) {
-      return `Зелья ${oldName} нет в инвентаре!`;
-    }
+//   updatePotionName(oldName, newName ) {
+//     const { potions } = this;
+//     for (const potion of this.potions) {
+//       if (potion.name === oldName) {
+//         potion.name = newName;
+//         return `Зелье ${oldName} обновлено в инвентаре`;
+//       }
+//     }
+//     return `Зелья ${oldName} нет в инвентаре!`;
+//   }
 
-    this.potions.splice(potionIndex, 1, newName);
-  },
-  // Пиши код выше этой строки
-};
+// };
+
+
+// atTheOldToad.addPotion({ name: 'Невидимка', price: 620 });
+// atTheOldToad.addPotion({ name: 'Зелье силы', price: 270 });
+// atTheOldToad.removePotion('Дыхание дракона');
+// atTheOldToad.updatePotionName('Дыхание дракона', 'Полиморф');
+// atTheOldToad.updatePotionName('Каменная кожа', 'Зелье неуязвимости');
+// console.log(atTheOldToad.getPotions());
+
 
 
 
@@ -954,3 +965,26 @@ const atTheOldToad = {
 
 
 // Паттерн объект настроек!!!!!!!
+
+
+
+//  У нас есть объект, в котором хранятся
+// зарплаты нашей команды.
+// Напишите код для суммирования всех зарплат
+// и сохраните результат в переменной sum.
+// Должно получиться 390.
+// Если объект salaries пуст, то результат должен быть 0.
+// const salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130
+// };
+
+// let sum = 0;
+
+// for (const salary of Object.values(salaries)) {
+//   sum += salary;
+// }
+// console.log(sum);
+
+
