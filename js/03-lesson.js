@@ -392,41 +392,54 @@
 
 // 19. Напиши функцию getAllPropValues(propName) которая принимает один параметр propName - имя (ключ) свойства. Функция должна вернуть массив всех значений свойства с таким именем из каждого объекта в массиве products. Если в объектах нет свойства с таким именем, функция должна вернуть пустой массив.
 
-// const products = [
-//   { name: 'Радар', price: 1300, quantity: 4 },
-//   { name: 'Сканер', price: 2700, quantity: 3 },
-//   { name: 'Дроид', price: 400, quantity: 7 },
-//   { name: 'Захват', price: 1200, quantity: 9 },
-// ];
+const products = [
+  { name: 'Радар', price: 1300, quantity: 4 },
+  { name: 'Сканер', price: 2700, quantity: 3 },
+  { name: 'Дроид', price: 400, quantity: 7 },
+  { name: 'Захват', price: 1200, quantity: 9 },
+];
 
-// function getAllPropValues(propName) {
-//     const newMas = [];
-//     for (const product of products) { 
+function getAllPropValues(propName) {
+    const newMas = [];
+    for (const product of products) { 
         
-//         if (Object.keys(product).includes(propName)) { 
-//             newMas.push(product[propName])
-//         }
-//     }
-//     return newMas;
-// }
+        if (Object.keys(product).includes(propName)) { 
+            newMas.push(product[propName])
+        }
+    }
+    return newMas;
+}
 
-// function getAllPropValues(propName) {
-//     const newMas = [];
-//     for (const product of products) { 
-//         for (const key in product) {
-//             if (key === propName) {
-//                 newMas.push(product[key])
-//             }
-//         }
-//     }
-//     return newMas;
-// }
+function getAllPropValues(propName) {
+    const newMas = [];
+    for (const product of products) { 
+        for (const key in product) {
+            if (key === propName) {
+                newMas.push(product[key])
+            }
+        }
+    }
+    return newMas;
+}
 
-// console.log(getAllPropValues('name'));
-// console.log(getAllPropValues('quantity'));
-// console.log(getAllPropValues('price'));
-// console.log(getAllPropValues('category'));
 
+
+function getAllPropValues (prop) {
+  const total = [];
+
+  for (const product of products) {
+    if (product[prop]) {
+      total.push(product[prop]);
+    }
+  }
+
+  return total;
+};
+
+console.log(getAllPropValues('name'));
+console.log(getAllPropValues('quantity'));
+console.log(getAllPropValues('price'));
+console.log(getAllPropValues('category'));
 
 
 // 20. Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара. Функция должна вернуть общую стоимость (цена * количество) товара с таким именем из массива products.
@@ -759,22 +772,136 @@
 // 37. Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions.
 // 38. Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий в свойстве potions.
 
-const atTheOldToad = {
-    potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
+// const atTheOldToad = {
+//     potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
     
-    getPotions() {
-        return this.potions
-    },
+//     getPotions() {
+//         return this.potions
+//     },
 
-    addPotion(potionName) {
-        this.potions.push(potionName);
-    },
+//     addPotion(potionName) {
+//         this.potions.push(potionName);
+//     },
 
 
+// };
+
+// console.log(atTheOldToad.getPotions());
+// atTheOldToad.addPotion('Невидимка');
+// console.log(atTheOldToad.getPotions());
+
+
+// 39. Дополни метод removePotion(potionName) так, чтобы он удалял зелье potionName из массива зелий в свойстве potions.
+// const atTheOldToad = {
+//   potions: ["Зелье скорости", "Дыхание дракона", "Каменная кожа"],
+//     removePotion(potionName) {
+//         const zeleIndex = this.potions.indexOf(potionName);
+//         this.potions.splice(zeleIndex, 1);
+//         return this.potions
+      
+
+//   },
+// };
+// console.log(atTheOldToad.removePotion('Дыхание дракона'));
+
+
+
+// 40. Дополни метод updatePotionName(oldName, newName) так, чтобы он обновлял название зелья с oldName на newName, в массиве зелий в свойстве potions.
+
+// const atTheOldToad = {
+//   potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
+//     updatePotionName(oldName, newName) {
+//         const zeleIndex = this.potions.indexOf(oldName);
+//         this.potions.splice(zeleIndex, 1,newName);
+//         return this.potions
+
+//   },
+// };
+
+// console.log(atTheOldToad.updatePotionName('Каменная кожа', 'Невидимка'));
+
+
+// 41. Заказчица хочет чтобы каждое зелье было представлено не только именем, но и ценой, а в будущем может быть и другими характеристиками. Поэтому теперь в свойстве potions будет храниться массив объектов со следующими свойствами.
+// Выполни рефакторинг методов объекта atTheOldToad так, чтобы они работали не с массивом строк, а с массивом объектов.
+// getPotions() - метод для получения всех зелий. Возвращает значение свойства potions.
+// addPotion(newPotion) - добавляет зелье newPotion (уже объект) в массив в свойстве potions.
+// removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
+// updatePotionName(oldName, newName) - обновляет свойство name объекта-зелья с названием oldName на newName в массиве potions.
+
+const atTheOldToad = {
+  potions: [
+    { name: 'Зелье скорости', price: 460 },
+    { name: 'Дыхание дракона', price: 780 },
+    { name: 'Каменная кожа', price: 520 },
+  ],
+  // Пиши код ниже этой строки
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(potionName) {
+    if (this.potions.includes(potionName)) {
+      return `Зелье ${potionName} уже есть в инвентаре!`;
+    }
+
+    this.potions.push(potionName);
+  },
+  removePotion(potionName) {
+    const potionIndex = this.potions.indexOf(potionName);
+
+    if (potionIndex === -1) {
+      return `Зелья ${potionName} нет в инвентаре!`;
+    }
+
+    this.potions.splice(potionIndex, 1);
+  },
+  updatePotionName(oldName, newName) {
+    const potionIndex = this.potions.indexOf(oldName);
+
+    if (potionIndex === -1) {
+      return `Зелья ${oldName} нет в инвентаре!`;
+    }
+
+    this.potions.splice(potionIndex, 1, newName);
+  },
+  // Пиши код выше этой строки
 };
 
-console.log(atTheOldToad.getPotions());
-atTheOldToad.addPotion('Невидимка');
-console.log(atTheOldToad.getPotions());
 
 
+
+
+//
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Зелье скорости", price: 460 },
+//     { name: "Дыхание дракона", price: 780 },
+//     { name: "Каменная кожа", price: 520 },
+//   ],
+//   // Пиши код ниже этой строки
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion({ name, price }) {
+//     for (const potion of this.potions) {
+//       if (potion["name"] === name) {
+//         return `Зелье ${name} уже есть в инвентаре!`;
+//       }
+//     }
+//     this.potions.push({
+//       name: name,
+//       price: price,
+//     });
+//   },
+//   removePotion(potionName) {
+//     for (let i = 0; i < this.potions.length; i += 1) {
+//       if (this.potions[i].name === potionName) {
+//         return this.potions.splice(i, 1);
+//       }
+//     }
+//     console.log(`Зелья ${potionName} нет в инвентаре!`);
+//   },
+//   updatePotionName(oldName, newName) {
+//     const potionIndex = this.potions.indexOf(oldName);
+
+//     if (potionIndex === -1) {
+//       return `Зелья ${oldName} нет в
