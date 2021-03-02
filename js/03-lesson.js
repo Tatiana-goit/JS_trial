@@ -84,7 +84,7 @@
 //     price: 2153,
 //     tags: ['premium', 'promoted', 'top'],
 //   };
-  
+
 //   const aptRating = apartment.rating;
 //   const aptDescr = apartment.descr;
 //   const aptPrice = apartment.price;
@@ -267,7 +267,7 @@
 //             propCount += 1;
 //         }
 //     }
-      
+
 //   return propCount;
 // }
 // console.log(countProps({ }));
@@ -311,7 +311,7 @@
 // for (const key of keys) {
 //   values.push(apartment[key]);
 // }
-    
+
 //  console.log(values);
 
 
@@ -402,7 +402,7 @@ const products = [
 // function getAllPropValues(propName) {
 //     const newMas = [];
 //     for (const product of products) { 
-        
+
 //         if (Object.keys(product).includes(propName)) { 
 //             newMas.push(product[propName])
 //         }
@@ -576,7 +576,7 @@ const products = [
 //         tomorrow: { low: tomorrowLow, high: tomorrowHigh } } = neww;
 
 // function calculateMeanTemperature() {
-    
+
 //   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
 // }
 
@@ -707,26 +707,26 @@ const products = [
 // 34. Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks() и addBook(bookName).
 // Метод removeBook(bookName) будет удалять книгу по имени. Возвращает строку 'Удаляем книгу <имя книги>', где <имя книги> это значение параметра bookName.
 // Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку 'Обновляем книгу <старое имя> на <новое имя>', где <старое имя> и <новое имя>это значения параметров oldName и newName соотвественно.
-    // const bookShelf = {
-    //     books: ['Последнее королевство', 'Страж снов'],
-    //     getBooks() {
-    //         return 'Возвращаем все книги';
-    //     },
-    //     addBook(bookName) {
-    //         return `Добавляем книгу ${bookName}`;
-    //     },
-    //     removeBook(bookName) {
-    //         return `Удаляем книгу ${bookName}`
-    //     },
-    //     updateBook(oldName, newName) {
-    //         return `Обновляем книгу ${oldName} на ${newName }`
-    //     }
-    // };
+// const bookShelf = {
+//     books: ['Последнее королевство', 'Страж снов'],
+//     getBooks() {
+//         return 'Возвращаем все книги';
+//     },
+//     addBook(bookName) {
+//         return `Добавляем книгу ${bookName}`;
+//     },
+//     removeBook(bookName) {
+//         return `Удаляем книгу ${bookName}`
+//     },
+//     updateBook(oldName, newName) {
+//         return `Обновляем книгу ${oldName} на ${newName }`
+//     }
+// };
 
-    // console.log(bookShelf.getBooks());
-    // console.log(bookShelf.addBook('Мгла'));
-    // console.log(bookShelf.removeBook('Красный закат'));
-    // console.log(bookShelf.updateBook('Пески Дюны', 'Дюна'));
+// console.log(bookShelf.getBooks());
+// console.log(bookShelf.addBook('Мгла'));
+// console.log(bookShelf.removeBook('Красный закат'));
+// console.log(bookShelf.updateBook('Пески Дюны', 'Дюна'));
 
 
 // const bookShelf = {
@@ -754,12 +754,12 @@ const products = [
 
 // const bookShelf = {
 //     books: ['Последнее королевство', 'Мгла', 'Страж снов'],
-    
+
 //     updateBook(oldName, newName) {
 //         const bookIndex = this.books.indexOf(oldName);
 //         this.books.splice(bookIndex, 1, newName);
 //         return this.books
- 
+
 //   },
 // };
 
@@ -773,7 +773,7 @@ const products = [
 
 // const atTheOldToad = {
 //     potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
-    
+
 //     getPotions() {
 //         return this.potions
 //     },
@@ -797,7 +797,7 @@ const products = [
 //         const zeleIndex = this.potions.indexOf(potionName);
 //         this.potions.splice(zeleIndex, 1);
 //         return this.potions
-      
+
 
 //   },
 // };
@@ -855,16 +855,16 @@ const products = [
 //     }
 //   },
 
-//   updatePotionName(oldName, newName ) {
-//     const { potions } = this;
-//     for (const potion of this.potions) {
-//       if (potion.name === oldName) {
-//         potion.name = newName;
-//         return `Зелье ${oldName} обновлено в инвентаре`;
-//       }
+// updatePotionName(oldName, newName) {
+//   const { potions } = this;
+//   for (const potion of this.potions) {
+//     if (potion.name === oldName) {
+//       potion.name = newName;
+//       return `Зелье ${oldName} обновлено в инвентаре`;
 //     }
-//     return `Зелья ${oldName} нет в инвентаре!`;
 //   }
+//   return `Зелья ${oldName} нет в инвентаре!`;
+// }
 
 // };
 
@@ -880,57 +880,49 @@ const products = [
 
 
 
-
-//
-// const atTheOldToad = {
-//   potions: [
-//     { name: "Зелье скорости", price: 460 },
-//     { name: "Дыхание дракона", price: 780 },
-//     { name: "Каменная кожа", price: 520 },
-//   ],
-//   // Пиши код ниже этой строки
-//   getPotions() {
-//     return this.potions;
-//   },
-//   addPotion({ name, price }) {
-//     for (const potion of this.potions) {
-//       if (potion["name"] === name) {
-//         return `Зелье ${name} уже есть в инвентаре!`;
-//       }
-//     }
-//     this.potions.push({
-//       name: name,
-//       price: price,
-//     });
-//   },
-//   removePotion(potionName) {
-//     for (let i = 0; i < this.potions.length; i += 1) {
-//       if (this.potions[i].name === potionName) {
-//         return this.potions.splice(i, 1);
-//       }
-//     }
-//     console.log(`Зелья ${potionName} нет в инвентаре!`);
-//   },
-//   updatePotionName(oldName, newName) {
-//     const potionIndex = this.potions.indexOf(oldName);
-
-//     if (potionIndex === -1) {
-//       return `Зелья ${oldName} нет в
-
-
-
-
 // ДОПОЛНИТЕЛЬНЫЕ ЗАДАЧИ
 // Поработать с перебором объектов (ключи,их значение)
 // уведичить все значения на 5, найти их сумму
 // Обджект энтрис. Вытянуть поэлементно - деструктуризировать
+// for (const [name, rating] of entries) 
+
 // const authors = {
 //   kiwi: 4,
 //   poly: 7,
 //   ajax: 9,
 //   mango: 6,
 // };
-// for (const [name, rating] of entries) 
+
+// for (const author in authors) {
+//   console.log(author);
+//   console.log(authors[author]);
+// }
+
+
+// console.log(Object.keys(authors));
+// let values = Object.values(authors);
+// console.log(values);
+// let sum = 0;
+
+// for (let i = 0; i < values.length; i +=1) {
+//   values[i] += 5;  
+//   sum += values[i]
+// }
+
+// console.log(values);
+// console.log({sum});
+
+
+// const newMas = Object.entries(authors);
+// console.log(newMas);
+
+// for (const [name, rating] of newMas) {
+//   console.log(name);
+// }
+// for (const [name, rating] of newMas) {
+//   console.log(rating);
+// }
+
 
 
 
@@ -941,6 +933,7 @@ const products = [
 // найти имена всех друзей
 // получить всех друзей со свойством false (отдельно и в массив новый)
 // 2 массива - один фолс другой тру
+
 // const friends = [
 //   { name: 'Mango', online: false },
 //   { name: 'Kiwi', online: true },
@@ -953,7 +946,17 @@ const products = [
 
 
 
-// Соединить 3 массива 3 числа (конкад и спред)
+// Соединить 2 массива 2 числа (конкад и спред)
+// const a = [1, 2, 3];
+// const b = 4;
+// const c = [5, 6, 7, 8, 9];
+// const d = 10;
+
+// const result = a.concat(b,c,d);
+// console.log(result);
+
+// const resultNew = [...a, b, ...c, d];
+// console.log({resultNew});
 
 
 
