@@ -86,13 +86,15 @@
 
 
 // 5. Замыкание
-const fnA = parameter => {
-  const value = 100;
-  const newFn = function () {
-    console.log(value * parameter);
-  }
-  return newFn;
-}
+// const fnA = parameter => {
+//   const value = 100;
+//   const newFn = function () {
+//     console.log(value * parameter);
+//   }
+//   return newFn;
+// }
 
-const fnB = fnA(5);
-fnB();
+// const fnB = fnA(5);
+// fnB();
+
+
