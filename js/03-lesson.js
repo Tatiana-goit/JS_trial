@@ -827,46 +827,46 @@ const products = [
 // removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
 // updatePotionName(oldName, newName) - обновляет свойство name объекта-зелья с названием oldName на newName в массиве potions.
 
-// const atTheOldToad = {
-//   potions: [
-//     { name: 'Зелье скорости', price: 460 },
-//     { name: 'Дыхание дракона', price: 780 },
-//     { name: 'Каменная кожа', price: 520 },
-//   ],
+const atTheOldToad = {
+  potions: [
+    { name: 'Зелье скорости', price: 460 },
+    { name: 'Дыхание дракона', price: 780 },
+    { name: 'Каменная кожа', price: 520 },
+  ],
 
-//   getPotions() {
-//     return this.potions;
-//   },
+  getPotions() {
+    return this.potions;
+  },
 
-//   addPotion({ name, price }) {
-//     for (const potion of this.potions) { 
-//        if (potion.name === name) {
-//         return `Зелье ${name} уже есть в инвентаре!`;
-//       }
-//     }
-//     this.potions.push({ name, price });
-//   },
+  addPotion({ name, price }) {
+    for (const potion of this.potions) { 
+       if (potion.name === name) {
+        return `Зелье ${name} уже есть в инвентаре!`;
+      }
+    }
+    this.potions.push({ name, price });
+  },
 
-//   removePotion(potionName) {
-//       for (let i = 0; i < this.potions.length; i += 1) {
-//       if (this.potions[i].name === potionName) {
-//         return this.potions.splice(i, 1);
-//       }
-//     }
-//   },
+  removePotion(potionName) {
+      for (let i = 0; i < this.potions.length; i += 1) {
+      if (this.potions[i].name === potionName) {
+        return this.potions.splice(i, 1);
+      }
+    }
+  },
 
-// updatePotionName(oldName, newName) {
-//   const { potions } = this;
-//   for (const potion of this.potions) {
-//     if (potion.name === oldName) {
-//       potion.name = newName;
-//       return `Зелье ${oldName} обновлено в инвентаре`;
-//     }
-//   }
-//   return `Зелья ${oldName} нет в инвентаре!`;
-// }
+updatePotionName(oldName, newName) {
+  const { potions } = this;
+  for (const potion of this.potions) {
+    if (potion.name === oldName) {
+      potion.name = newName;
+      return `Зелье ${oldName} обновлено в инвентаре`;
+    }
+  }
+  return `Зелья ${oldName} нет в инвентаре!`;
+}
 
-// };
+};
 
 
 // atTheOldToad.addPotion({ name: 'Невидимка', price: 620 });
