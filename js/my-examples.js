@@ -180,7 +180,7 @@
 
 // 22.	В 1626 году индейцы продали остров Манхеттен за 20 долларов. Если бы эти деньги  положили  в банк под  3% годовых от суммы  вклада в предыдущем году,  то  сколько денег на вкладе было бы в текущем году?  
 
-// const searchMoney = function (moneyStart, percent) { 
+// const searchMoney = (moneyStart, percent) => { 
 //     let sumMoney = moneyStart;
 //     const age = 2021 - 1626;
 //     for (let i = moneyStart; i <= age; i += 1) {
