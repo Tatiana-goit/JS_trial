@@ -4,7 +4,7 @@
 //     const result = callback(x, y);
 //     console.log(result)
 // }
- 
+
 // const add = (a, b) => a + b;
 
 // const sub = (a, b) => a - b;
@@ -70,7 +70,7 @@
 //     return fruit.isFresh
 // }
 
-    
+
 // const freshFruits = filter(fruits, callback);
 // console.log(freshFruits); 
 
@@ -307,3 +307,231 @@
 
 
 
+
+
+// 5. 
+
+// !!!из образца
+// const bookShelf = {
+//     authors: ['Бернард Корнуэлл', 'Роберт Шекли'],    
+// };
+
+// const getAuthors = function (bookShelf) {
+//     return this.authors;
+// };
+
+// // const addAuthor = function (authorName) {
+// //     this.authors.push(authorName);
+// // };
+    
+// console.log(getAuthors.call(bookShelf));
+
+// bookShelf.addAuthor('Ли Танит');
+// console.log(bookShelf.getAuthors());
+
+
+
+// Выполни рефакторинг методов объекта pizzaPalace, расставив отсутствующие this в местах обращения к свойствам и методам объекта.
+
+// const pizzaPalace = {
+//   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+
+//   checkPizza(pizzaName) {
+//     return this.pizzas.includes(pizzaName);
+//     },
+  
+//   order(pizzaName) {
+//     const isPizzaAvailable = this.checkPizza(pizzaName);
+
+//     if (!isPizzaAvailable) {
+//       return `В ассортименте нет пиццы с названием «${pizzaName}».`;
+//     }
+
+//     return `Заказ принят, готовим пиццу «${pizzaName}».`;
+//   },
+// };
+
+// console.log(pizzaPalace.order('Аль Копчино'));
+// console.log(pizzaPalace.order('Венская'));
+
+
+
+
+// 6. Перед увольнением разработчик сломал исходный код управления аккаунтами пользователей нашего сервиса доставки еды. Выполни рефакторинг методов объекта customer, расставив отсутствующие this при обращении к свойствам объекта.
+
+// const customer = {
+//   username: 'Mango',
+//   balance: 24000,
+//   discount: 0.1,
+//   orders: ['Burger', 'Pizza', 'Salad'],
+ 
+//   getBalance() {
+//     return this.balance;
+//   },
+//   getDiscount() {
+//     return this.discount;
+//   },
+//   setDiscount(value) {
+//     this.discount = value;
+//   },
+//   getOrders() {
+//     return this.orders;
+//   },
+//   addOrder(cost, order) {
+//     this.balance -= cost - cost * this.discount;
+//     this.orders.push(order);
+//   },
+
+// };
+
+// customer.setDiscount(0.15);
+// console.log(customer.getDiscount()); // 0.15
+// customer.addOrder(5000, 'Steak');
+// console.log(customer.getBalance()); // 19750
+// console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak']
+
+
+
+
+// 7. 
+
+// !!!!из образца
+// function greetGuest(greeting) {
+//   console.log(`${greeting}, ${this.username}.`);
+// }
+// const mango = { username: 'Манго' };
+// const poly = { username: 'Поли' };
+
+// greetGuest.call(mango, 'Добро пожаловать');
+// greetGuest.call(poly, 'С приездом');
+
+// Сервису приготовления и доставки еды требуется функция генерации сообщений о статусе заказа.
+// Дополни функцию composeMessage(position) так, чтобы она возвращала строку в формате 'Готовим <блюдо> для <почта>. Ваш заказ <позиция>-й в очереди.' Позиция это значение параметра position - позиция элемента в массиве (на единицу больше чем индекс).
+// Не объявляй дополнительные параметры функции composeMessage(position).
+// Используй call для вызова функции в контексте одного объекта-заказа.
+// Используй this в теле функции для доступа к свойствам объекта-заказа в контексте которого она была вызывана.
+// Дополни код так, чтобы в переменной messages, с помощью метода map, получился массив сообщений о статусе заказов из массива orders.
+
+// const orders = [
+//     { email: 'solomon@topmail.ua', dish: 'Burger', },
+//     { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//     { email: 'jacob@mail.com', dish: 'Taco' },
+// ];
+
+// function composeMessage(position) {
+
+//     return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+// }
+
+// // const messages = [];
+
+// // for (let i = 0; i < 3; i += 1) {
+// //     messages[i]= composeMessage.call(orders[i],i+1);
+// // }
+
+// // for (let i = 0; i < 3; i += 1) {
+// //     messages.push(composeMessage.call(orders[i],i+1));
+// // }
+
+// const messages = orders.map(function (order, index) {
+//     return composeMessage.call(order, index + 1);
+// });
+
+// console.log(messages);
+
+
+
+
+
+// 8. как 7
+
+
+
+
+// 9. Функция composeMessage(customerName) создаёт приветственные сообщения для ресторанов. Дополни код так, чтобы в переменных pizzaPalaceComposer и burgerShackComposer были её копии с привязанным контекстом к соответствующим объектам.
+
+
+// const pizzaPalace = {
+//   company: 'Pizza Palace',
+// };
+
+// const burgerShack = {
+//   company: 'Burger Shack',
+// };
+
+// function composeMessage(customerName) {
+//   return `${customerName}, всегда рады вас видеть в «${this.company}».`;
+// }
+
+// const pizzaPalaceComposer = composeMessage.bind(pizzaPalace);
+// const pizzaPalaceMessage = pizzaPalaceComposer('Манго');
+
+// const burgerShackComposer = composeMessage.bind(burgerShack);
+// const burgerShackMessage = burgerShackComposer('Поли');
+
+
+// console.log(pizzaPalaceMessage);
+// console.log(burgerShackMessage);
+
+
+
+
+// 10. 
+
+const customer = {
+  firstName: 'Jacob',
+  lastName: 'Mercer',
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+function makeMessage(callback) {
+  // callback() это вызов метода getFullName без объекта
+  console.log(`Обрабатываем заявку от ${callback()}.`);
+}
+
+makeMessage(customer.getFullName.bind(customer)); // Будет ошибка при вызове функции
+
+
+// Сервису рассылки электронной почты необходимо добавить логирование действий для сбора статистики. Функция logAndInvokeAction(email, action) ожидает почту и действие которое нужно выполнить - ссылку на метод объекта service. Сбор статистики симулируется логированием строки. Разберись и дополни код так, чтобы он работал верно.
+
+const service = {
+  mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
+  subscribe(email) {
+    this.mailingList.push(email);
+    return `Почта ${email} добавлена в рассылку.`;
+  },
+  unsubscribe(email) {
+    this.mailingList = this.mailingList.filter((e) => e !== email);
+    return `Почта ${email} удалена из рассылки.`;
+  },
+};
+
+function logAndInvokeAction(email, action) {
+  console.log(`Выполняем действие с ${email}.`);
+  return action(email);
+}
+
+const firstInvoke = logAndInvokeAction('kiwi@mail.uk', service.subscribe);
+console.log(firstInvoke);
+// Почта kiwi@mail.uk добавлена в рассылку.
+
+console.log(service.mailingList);
+/* ['mango@mail.com', 
+    'poly@hotmail.de', 
+    'ajax@jmail.net', 
+    'kiwi@mail.uk']*/
+const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe);
+console.log(secondInvoke);
+// Почта poly@hotmail.de удалена из рассылки.
+
+console.log(service.mailingList); // ['mango@mail.com', 'ajax@jmail.net', 'kiwi@mail.uk']
+
+
+
+
+
+
+
+// Задача интернет магазин от Репеты
