@@ -827,46 +827,46 @@
 // removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
 // updatePotionName(oldName, newName) - обновляет свойство name объекта-зелья с названием oldName на newName в массиве potions.
 
-const atTheOldToad = {
-  potions: [
-    { name: 'Зелье скорости', price: 460 },
-    { name: 'Дыхание дракона', price: 780 },
-    { name: 'Каменная кожа', price: 520 },
-  ],
+// const atTheOldToad = {
+//   potions: [
+//     { name: 'Зелье скорости', price: 460 },
+//     { name: 'Дыхание дракона', price: 780 },
+//     { name: 'Каменная кожа', price: 520 },
+//   ],
 
-  getPotions() {
-    return this.potions;
-  },
+//   getPotions() {
+//     return this.potions;
+//   },
 
-  addPotion({ name, price }) {
-    for (const potion of this.potions) { 
-       if (potion.name === name) {
-        return `Зелье ${name} уже есть в инвентаре!`;
-      }
-    }
-    this.potions.push({ name, price });
-  },
+//   addPotion({ name, price }) {
+//     for (const potion of this.potions) { 
+//        if (potion.name === name) {
+//         return `Зелье ${name} уже есть в инвентаре!`;
+//       }
+//     }
+//     this.potions.push({ name, price });
+//   },
 
-  removePotion(potionName) {
-      for (let i = 0; i < this.potions.length; i += 1) {
-      if (this.potions[i].name === potionName) {
-        return this.potions.splice(i, 1);
-      }
-    }
-  },
+//   removePotion(potionName) {
+//       for (let i = 0; i < this.potions.length; i += 1) {
+//       if (this.potions[i].name === potionName) {
+//         return this.potions.splice(i, 1);
+//       }
+//     }
+//   },
 
-updatePotionName(oldName, newName) {
-  const { potions } = this;
-  for (const potion of this.potions) {
-    if (potion.name === oldName) {
-      potion.name = newName;
-      return `Зелье ${oldName} обновлено в инвентаре`;
-    }
-  }
-  return `Зелья ${oldName} нет в инвентаре!`;
-}
+// updatePotionName(oldName, newName) {
+//   const { potions } = this;
+//   for (const potion of this.potions) {
+//     if (potion.name === oldName) {
+//       potion.name = newName;
+//       return `Зелье ${oldName} обновлено в инвентаре`;
+//     }
+//   }
+//   return `Зелья ${oldName} нет в инвентаре!`;
+// }
 
-};
+// };
 
 
 // atTheOldToad.addPotion({ name: 'Невидимка', price: 620 });
@@ -990,4 +990,118 @@ updatePotionName(oldName, newName) {
 // }
 // console.log(sum);
 
+
+
+
+// !!!!!!Задачи из практики с Ашотом
+
+// 1) Напиши скрипт, который, для объекта user,
+// последовательно:
+
+// a. добавляет поле mood со значением 'happy'
+// b. заменяет значение hobby на 'skydiving'
+// c. заменяет значение premium на false
+// d. выводит содержимое объекта user в формате
+// ключ:значение
+// используя Object.keys() и for...of
+
+// const user = {
+//   name: "John",
+//   age: 20,
+//   hobby: "tennis",
+//   premium: true
+// };
+
+// const changeUser = obj => {
+//   obj.mood = "happy";
+//   obj.hobby = "skydiving";
+//   obj.premium = false;
+
+//   for (const key of Object.keys(obj)) {
+//     console.log(`${obj[key]}`);
+//   }
+
+//   return obj;
+// }
+
+// console.log(changeUser(user));
+
+
+
+// 4) Создайте объект calculator (калькулятор)
+// с тремя методами:
+
+// a. read(a, b)- запрашивает два значения и
+// сохраняет их как свойства объекта.
+// b. sum() - возвращает сумму сохранённых значений.
+// c. mult() - перемножает сохранённые
+// значения и возвращает результат.
+
+// const calculator = {
+//   value1: 0,
+//   value2: 0,
+//   read(a, b) {
+//     this.value1 = a;
+//     this.value2 = b;
+//   },
+//   sum() {
+//     return this.value1 + this.value2;
+//   },
+//   mult() {
+//     return this.value1 * this.value2;
+//   }
+// };
+
+// calculator.read(3, 4);
+// const { value1, value2 } = calculator;
+// console.log({ value1, value2 });
+
+// console.log(calculator.sum());
+// console.log(calculator.mult());
+
+
+
+// const objData = {
+//   name: "John",
+//   surName: "Stones",
+//   age: 25,
+//   hobby: "football",
+//   merried: false
+// };
+
+// function getNewValues(obj) {
+//   const { name, surName, age, hobby, merried } = obj;
+
+//   let arr = [];
+
+//   arr.push({ name }, {surName}, {age}, {hobby}, {merried} });
+
+//   console.log(arr);
+// }
+
+// getNewValues(objData);
+
+// -----------------------
+
+// const objData = {
+//   name: "John",
+//   surName: "Stones",
+//   age: 25,
+//   hobby: "football",
+//   merried: false
+// };
+
+// function getNewValues(obj) {
+//   const { name, surName, age, hobby, merried } = obj;
+
+//   let arr = [];
+
+//   arr.push({ name }, {surName}, {age}, {hobby}, {merried} });
+
+//   console.log(arr);
+// }
+
+// getNewValues(objData);
+
+// -----------------------
 

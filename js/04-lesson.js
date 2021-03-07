@@ -333,26 +333,26 @@
 
 // Выполни рефакторинг методов объекта pizzaPalace, расставив отсутствующие this в местах обращения к свойствам и методам объекта.
 
-const pizzaPalace = {
-  pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
+// const pizzaPalace = {
+//   pizzas: ['Ультрасыр', 'Аль Копчино', 'Четыре нарезона'],
 
-  checkPizza(pizzaName) {
-    return this.pizzas.includes(pizzaName);
-    },
+//   checkPizza(pizzaName) {
+//     return this.pizzas.includes(pizzaName);
+//     },
   
-  order(pizzaName) {
-    const isPizzaAvailable = this.checkPizza(pizzaName);
+//   order(pizzaName) {
+//     const isPizzaAvailable = this.checkPizza(pizzaName);
 
-    if (!isPizzaAvailable) {
-      return `В ассортименте нет пиццы с названием «${pizzaName}».`;
-    }
+//     if (!isPizzaAvailable) {
+//       return `В ассортименте нет пиццы с названием «${pizzaName}».`;
+//     }
 
-    return `Заказ принят, готовим пиццу «${pizzaName}».`;
-  },
-};
+//     return `Заказ принят, готовим пиццу «${pizzaName}».`;
+//   },
+// };
 
-console.log(pizzaPalace.order('Аль Копчино'));
-console.log(pizzaPalace.order('Венская'));
+// console.log(pizzaPalace.order('Аль Копчино'));
+// console.log(pizzaPalace.order('Венская'));
 
 
 
@@ -535,3 +535,91 @@ console.log(pizzaPalace.order('Венская'));
 
 
 // Задача интернет магазин от Репеты
+
+
+
+
+
+
+
+
+
+
+
+// Задачи из практики Ашота
+
+/* 1. Напишите две функции:
+a. letMeSeeYourName(callback) - спрашивает имя пользователя 
+через prompt и вызывает 
+коллбек ф-цию callback
+b. greet(name) - коллбек принимающий имя и логирующий в 
+консоль строку "Привет" + name */
+
+// function letMeSeeYourName(callback) {
+//   const name = prompt("введите имя");
+//   if (name) {
+//     return callback(name);
+//   }
+//   return console.log('Это не имя');
+// }
+
+// function greet(name) {
+//   console.log(`Привет ${name}`);
+// }
+
+// letMeSeeYourName(greet);
+
+
+
+// const letMeSeeYourName = callback => callback(prompt("введите имя"));
+// letMeSeeYourName(name => console.log(`Привет ${name}`));
+
+
+
+
+/* 2. Напишите две функции:
+a. makeProduct(name, price, callback) - принимает имя и 
+цену товара, а также колбек. 
+Функция создаёт обьект товара, добавляя ему уникальный 
+идентификатор в свойство id и
+ вызывает колбек передавая ему созданный обьект.
+b. showProduct(product) - коллбек принимающий обьект 
+продукта и логирующий его в консоль */
+
+
+// const makeProduct = (name, price, callback) => {
+//   const product = {
+//     name,
+//     price,
+//   };
+
+//   product.id = Math.random()*100;
+//   return callback(product);
+// }
+
+// const showProduct = product => console.log(product);
+
+// makeProduct("молоко", 40, showProduct);
+
+
+/* 3. Выполните рефакторинг функции makeDishWithShef(shefName, dish) так, 
+чтобы не нужно было каждый раз передавать имя шефа. Напишите функцию 
+makeShef(shefName), 
+которая возвращает другую функцию makeDish(dish), 
+помнящую имя шефа при её вызове. */
+
+// const makeShef = (shefName) => {
+//   return function makeDish(dish) {
+//     console.log(`Шеф ${shefName} готовит ${dish}`);
+//   }
+// }
+
+//   const name = makeShef('Эдуард');
+// name('пирожки');
+// name('рыбу');
+// name('мясо');
+
+// const nameSecond = makeShef('Дмитрий');
+// nameSecond('компот');
+// nameSecond ('суфле');
+
