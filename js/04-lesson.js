@@ -478,6 +478,7 @@
 
 // 10. 
 
+// !!! из образца
 // const customer = {
 //   firstName: 'Jacob',
 //   lastName: 'Mercer',
@@ -491,7 +492,8 @@
 //   console.log(`Обрабатываем заявку от ${callback()}.`);
 // }
 
-// makeMessage(customer.getFullName.bind(customer)); // Будет ошибка при вызове функции
+// makeMessage(customer.getFullName.bind(customer)); 
+
 
 
 // // Сервису рассылки электронной почты необходимо добавить логирование действий для сбора статистики. Функция logAndInvokeAction(email, action) ожидает почту и действие которое нужно выполнить - ссылку на метод объекта service. Сбор статистики симулируется логированием строки. Разберись и дополни код так, чтобы он работал верно.
@@ -513,7 +515,7 @@
 //   return action(email);
 // }
 
-// const firstInvoke = logAndInvokeAction('kiwi@mail.uk', service.subscribe);
+// const firstInvoke = logAndInvokeAction('kiwi@mail.uk', service.subscribe.bind(service));
 // console.log(firstInvoke);
 // // Почта kiwi@mail.uk добавлена в рассылку.
 
@@ -522,7 +524,7 @@
 //     'poly@hotmail.de', 
 //     'ajax@jmail.net', 
 //     'kiwi@mail.uk']*/
-// const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe);
+// const secondInvoke = logAndInvokeAction('poly@hotmail.de', service.unsubscribe.bind(service));
 // console.log(secondInvoke);
 // // Почта poly@hotmail.de удалена из рассылки.
 
@@ -644,3 +646,51 @@ makeShef(shefName),
 /* 7. Напишите функцию makeCounter(), которая возвращает 
 другую функцию, 
 которая считает и логирует количество своих вызовов. */
+
+// const makeCounter = () => {
+//     let coint = 0;
+//     return () => {
+//         coint += 1;
+//         console.log(coint);
+//     };
+// };
+// const x = makeCounter();
+// x();
+// x();
+// x();
+
+
+/* 8. Напишите функцию savePassword(password) которая принимает 
+пароль 
+и возвращает внутреннюю функцию, которая принимает строку и 
+возвращает 
+буль true, если строка совпадает с сохраненным паролем и false 
+- если не совпадает. */
+
+// const savePassword = pwd => {
+//   return pwd2 => {
+//     return pwd === pwd2;
+//   };
+// };
+
+// const pass = savePassword("password");
+
+// console.log(pass);
+
+// console.log(pass("password"));
+// console.log(pass("password1"));
+// console.log(pass("password2"));
+
+
+/* 9. Напишите функцию для хранения скидки. Функция возвращает 
+другую функцию,которая принимает сумму 
+покупки и возвращает финальную сумму с сохранённой скидкой. */
+
+// const makeDiscount = discount => {
+//   // return sum => sum - sum * discount;
+//   return sum => sum - sum * (discount / 100);
+// };
+
+// const discount50 = makeDiscount(50);
+
+// console.log(discount50(1000));
