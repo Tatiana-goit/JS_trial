@@ -87,15 +87,25 @@
 
 // 5. Замыкание
 // const fnA = parameter => {
-//   const value = 100;
-//   const newFn = function () {
-//     console.log(value * parameter);
+//   const value = 10;
+//   const newFn = function (newParametr) {
+//     console.log(value * parameter*newParametr);
 //   }
 //   return newFn;
 // }
 
 // const fnB = fnA(5);
-// fnB();
+// fnB(25);
+
+// !!!!!!!!!
+// const fnA = parameter => {
+//   const value = 10;
+//   const newFn = newParametr => console.log(value * parameter * newParametr);
+//   return newFn;
+// }
+
+// const fnB = fnA(5);
+// fnB(25);
 
 
 
@@ -694,3 +704,6 @@ makeShef(shefName),
 // const discount50 = makeDiscount(50);
 
 // console.log(discount50(1000));
+
+
+
