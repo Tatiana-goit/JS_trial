@@ -22,3 +22,43 @@
 // console.log(poly.sell('Microwave')); // Manager Poly sold Microwave
 // console.log(poly.sales); // 12
     
+
+
+
+// !!!!! Задачи с видео Репеты
+
+// const Head = function ({ ears, nose, mouth } = {}) {
+//     this.ears = ears;
+//     this.nose = nose;
+//     this.mouth = mouth;
+// }
+
+// Head.prototype.changeEars = function (newColor) {
+//         this.ears = newColor
+//     }
+
+// const firstHead = new Head({
+//     ears: 'blue',
+//     nose: 'strong',
+//     mouth: 'small',
+// })
+
+// console.log(firstHead);
+
+// firstHead.changeEars('black');
+
+// console.log(firstHead);
+
+// const secondHead = new Head({
+//     ears: 'green',
+//     nose: 'strong',
+//     mouth: 'medium',
+// })
+
+// console.log(secondHead);
+
+
+// Head.message = 'Статическое свойство';
+// Head.newNewNewNew = function () { };
+
+// console.dir(Head);
