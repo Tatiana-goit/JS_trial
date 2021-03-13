@@ -422,32 +422,32 @@
 // Используй this в теле функции для доступа к свойствам объекта-заказа в контексте которого она была вызывана.
 // Дополни код так, чтобы в переменной messages, с помощью метода map, получился массив сообщений о статусе заказов из массива orders.
 
-// const orders = [
-//     { email: 'solomon@topmail.ua', dish: 'Burger', },
-//     { email: 'artemis@coldmail.net', dish: 'Pizza' },
-//     { email: 'jacob@mail.com', dish: 'Taco' },
-// ];
+const orders = [
+    { email: 'solomon@topmail.ua', dish: 'Burger', },
+    { email: 'artemis@coldmail.net', dish: 'Pizza' },
+    { email: 'jacob@mail.com', dish: 'Taco' },
+];
 
-// function composeMessage(position) {
+function composeMessage(position) {
 
-//     return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+    return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+}
+
+// const messages = [];
+
+// for (let i = 0; i < 3; i += 1) {
+//     messages[i]= composeMessage.call(orders[i],i+1);
 // }
 
-// // const messages = [];
+// for (let i = 0; i < 3; i += 1) {
+//     messages.push(composeMessage.call(orders[i],i+1));
+// }
 
-// // for (let i = 0; i < 3; i += 1) {
-// //     messages[i]= composeMessage.call(orders[i],i+1);
-// // }
+const messages = orders.map(function (order, index) {
+    return composeMessage.call(order, index + 1);
+});
 
-// // for (let i = 0; i < 3; i += 1) {
-// //     messages.push(composeMessage.call(orders[i],i+1));
-// // }
-
-// const messages = orders.map(function (order, index) {
-//     return composeMessage.call(order, index + 1);
-// });
-
-// console.log(messages);
+console.log(messages);
 
 
 
