@@ -1,6 +1,6 @@
 // Тренировка
 
-const numbers = [2, 5, 9, 7, 1, 10];
+// const numbers = [2, 5, 9, 7, 1, 10];
 
 // console.log(numbers);
 
@@ -29,12 +29,12 @@ const numbers = [2, 5, 9, 7, 1, 10];
 
 
 
-const mults = [
-    { id: '1', name: 'Matroskin', nick: 'Kot', force: 25, online: false },
-    { id: '2', name: 'Pechkin', nick: 'Pochtalion', force: 12, online: true  },
-    { id: '3', name: 'Fedor', nick: 'Dydy', force: 35, online: false  },
-    { id: '4', name: 'Sharic', nick: 'Pes', force: 23, online: true },
-]
+// const mults = [
+//     { id: '1', name: 'Matroskin', nick: 'Kot', force: 25, online: false },
+//     { id: '2', name: 'Pechkin', nick: 'Pochtalion', force: 12, online: true  },
+//     { id: '3', name: 'Fedor', nick: 'Dydy', force: 35, online: false  },
+//     { id: '4', name: 'Sharic', nick: 'Pes', force: 23, online: true },
+// ]
 
 // console.log(mults);
 
@@ -263,17 +263,17 @@ const mults = [
 //     return newArray;
 // }
 
-function changeEven(numbers, value) {
+// function changeEven(numbers, value) {
 
-    const newArray=numbers.map(number => {
+//     const newArray=numbers.map(number => {
 
-        if (number % 2 === 0) {
-            number + value;
-        } else { number }
-    })
+//         if (number % 2 === 0) {
+//             number + value;
+//         } else { number }
+//     })
 
-    return newArray;
-}
+//     return newArray;
+// }
 
 // console.log(changeEven([17, 24, 68, 31, 42], 100));
 
@@ -330,30 +330,71 @@ function changeEven(numbers, value) {
 
 // 13. Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name) из массива объектов в параметре users.
 
-const users = [
-    {
-        name: 'Moore Hensley',
-        email: 'moorehensley@indexia.com',
-        eyeColor: 'blue',
-        friends: ['Sharron Pace'],
-        isActive: false,
-        balance: 2811,
-        skills: ['ipsum', 'lorem'],
-        gender: 'male',
-        age: 37,
-    },
-    {
-        name: 'Sharlene Bush',
-        email: 'sharlenebush@tubesys.com',
-        eyeColor: 'blue',
-        friends: ['Briana Decker', 'Sharron Pace'],
-        isActive: true,
-        balance: 3821,
-        skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
-        gender: 'female',
-        age: 34,
-    }
-]
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
 
 // const getUserNames = users.map(user => user.name)
 // console.log(getUserNames);
@@ -380,3 +421,210 @@ const users = [
 //   };
 
 // console.log(getUserEmails(users));
+
+
+// 15. Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, а в переменной oddNumbers массив нечётных. Обязательно используй метод filter()
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter(number => number %2 ===0);
+// const oddNumbers = numbers.filter(number => number % 2 !== 0);
+
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+
+
+// 16. Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений.
+
+// const books = [
+//     {
+//       title: 'Последнее королевство',
+//       author: 'Бернард Корнуэлл',
+//       genres: ['приключения', 'историческое']
+//     },
+//     {
+//       title: 'На берегу спокойных вод',
+//       author: 'Роберт Шекли',
+//       genres: ['фантастика', 'мистика']
+//     },
+//     {
+//       title: 'Красна как кровь',
+//       author: 'Ли Танит',
+//       genres: ['ужасы', 'мистика', 'приключения']
+//     }
+//   ];
+
+//   const allGenres = books.flatMap(book => book.genres);
+//   const uniqueGenres = allGenres.filter((element,index,self) => self.indexOf(element) === index);
+// console.log(allGenres);
+// console.log(uniqueGenres);
+
+
+// 17.  Используя метод filter() дополни код так, чтобы:
+// В переменной topRatedBooks получился массив книг рейтинг которых (свойство rating) больше либо равно значению переменной MIN_RATING.
+// В переменной booksByAuthor получился массив книг написанных автором с именем(свойство author) которое совпадает со значением в переменной AUTHOR.
+
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//   { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = 'Бернард Корнуэлл';
+
+
+// const topRatedBooks = books.filter (({rating}) => rating>= MIN_RATING);
+// const booksByAuthor = books.filter(({ author }) => author === AUTHOR);
+
+// const topRatedBooks = books.filter (({rating}) => rating>= MIN_RATING).map(({title}) => title);
+// const booksByAuthor = books.filter(({ author }) => author === AUTHOR).map(({author})=> author);
+
+
+// console.log(topRatedBooks);
+// console.log(booksByAuthor);
+
+
+
+// 18. Дополни функцию getUsersWithEyeColor(users, color) так, чтобы она возвращала массив пользователей у которых цвет глаз (свойство eyeColor) совпадает со значением параметра color.
+
+// const getUsersWithEyeColor = (users, color) => {
+//     const findEyeColor = users.filter(user => user.eyeColor === color);
+//     return findEyeColor;
+// };
+
+// const getUsersWithEyeColor = (users, color) => {
+//     const findEyeColor = users.filter(({ eyeColor }) => eyeColor === color).map(({ name, eyeColor }) => ({ name, eyeColor}));
+//     return findEyeColor;
+// };
+
+// console.log(getUsersWithEyeColor(users, 'blue'));
+
+
+// 19.Дополни функцию getUsersWithAge(users, minAge, maxAge) так, чтобы она возвращала массив пользователей, возраст которых (свойство age) попадает в промежуток от minAge до maxAge.
+
+const users = [
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+    age: 37
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+    age: 34
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+    age: 24
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+    age: 21
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+    age: 27
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+    age: 38
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+      eyeColor: 'brown',
+       friends: 'Goldie Gentry',
+    // friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+    age: 39
+  }
+]
+
+// const getUsersWithAge = (users, minAge, maxAge) => {
+//    return users.filter(({age}) => (age >= minAge) && (age <= maxAge));
+// };
+
+// console.log(getUsersWithAge(users,30,40));
+
+
+// 20. Дополни функцию getUsersWithFriend(users, friendName) так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре friendName. Массив друзей пользователя хранится в свойстве friends.
+
+// const getUsersWithFriend = (users, friendName) => {
+//     return users.filter(user => user.friends.includes(friendName));
+   
+// };
+
+// console.log( getUsersWithFriend(users, 'Goldie Gentry')); 
+
+
+
+// 21. Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends). У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
+
+// const getFriends = (users) => {
+//     return users.flatMap(user => user.friends).filter((friend,index,self) => self.indexOf(friend) ===index)
+   
+// };
+
+// console.log(getFriends(users));
+
+
+
+
+// 22.Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей, значение свойства isActive которых true.
+
+// const getActiveUsers = (users) => {
+//     return users.filter(user => user.isActive)
+   
+// };
+
+// console.log(getActiveUsers(users));
+
+
+
+// 23. Дополни функцию getInactiveUsers(users) так, чтобы она возвращала массив неактивных пользователей, значение свойства isActive которых false.
+
+// const getInactiveUsers = (users) => {
+//     return users.filter(user => !user.isActive)
+   
+// };
+
+// console.log(getInactiveUsers(users));
