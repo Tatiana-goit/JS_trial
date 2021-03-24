@@ -330,71 +330,71 @@
 
 // 13. Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name) из массива объектов в параметре users.
 
-const users = [
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male'
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female'
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male'
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female'
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male'
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
-    isActive: false,
-    balance: 1498,
-    gender: 'male'
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female'
-  }
-]
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
 
 // const getUserNames = users.map(user => user.name)
 // console.log(getUserNames);
@@ -949,3 +949,60 @@ const users = [
 // console.log(getTotalBalanceByGender(users, 'female'));
 // console.log(getTotalBalanceByGender(users, 'male'));
 
+const users = [
+  { name: "Игорь", sex: "male", age: 29 },
+  { name: "Михаил", sex: "male", age: 21 },
+  { name: "Ирина", sex: "female", age: 25 },
+  { name: "Олег", sex: "male", age: 14 },
+  { name: "Марина", sex: "female", age: 23 },
+  { name: "Оксана", sex: "female", age: 17 },
+  { name: "Алексей", sex: "male", age: 8 },
+  { name: "Антон", sex: "male", age: 47 },
+  { name: "Валерия", sex: "female", age: 50 },
+  { name: "Екатерина", sex: "female", age: 12 }
+];
+
+
+
+/* 
+  1. В массиве users отфильтровать пользователей по возрасту так чтобы получить всех выше 18 лет.
+     Найти самого младшего из них и в консоль написать сообщение: User самый молодой и ему/ей years лет
+     !!!Важно понимать пол пользователя и определить в сообщении "ему" или "ей"
+*/
+
+
+
+/* 
+  2. В массиве users отфильтровать всех по полу, сначала female потом male 
+*/
+const filterOfSex = (users,sex) =>
+    users.filter(user => user.sex === sex);
+
+console.log(filterOfSex(users,'female'));
+
+console.log(filterOfSex(users,'male'));
+
+
+/* 
+  3. В массиве users найти пользователя по имени Марина
+*/
+
+const findName = (users,name) =>
+    users.find(user => user.name === name)
+
+console.log(findName(users,'Марина'));
+/* 
+  4. Пробежаться по массиву users, если пользователь мужчина добавить 10 лет к возрасту, 
+  если женщина снять 5 лет
+  !!! Важно проверять что возраст не отрицательное число :)
+*/
+
+const changeAge = (users) =>
+  users.map(user => {
+    return
+    if (user.sex === 'male') {
+      user.age += 10
+    } else { user.age -= 5 }
+  });
+
+  console.log(changeAge(users));
