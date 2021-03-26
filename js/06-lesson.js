@@ -974,23 +974,28 @@ const users = [
 
 /* 
   2. В массиве users отфильтровать всех по полу, сначала female потом male 
-*/
-const filterOfSex = (users,sex) =>
-    users.filter(user => user.sex === sex);
+// */
+// const filterOfSex = (users,sex) =>
+//     users.filter(user => user.sex === sex);
 
-console.log(filterOfSex(users,'female'));
+// console.log(filterOfSex(users,'female'));
+// console.log(filterOfSex(users,'male'));
 
-console.log(filterOfSex(users,'male'));
+
+// or
+
+// const SortedOfSex = [...users].sort((a, b) => a.sex.localeCompare(b.sex));
+// console.log(SortedOfSex);
 
 
 /* 
   3. В массиве users найти пользователя по имени Марина
 */
 
-const findName = (users,name) =>
-    users.find(user => user.name === name)
+// const findName = (users,name) =>
+//     users.find(user => user.name === name)
 
-console.log(findName(users,'Марина'));
+// console.log(findName(users,'Марина'));
 /* 
   4. Пробежаться по массиву users, если пользователь мужчина добавить 10 лет к возрасту, 
   если женщина снять 5 лет
